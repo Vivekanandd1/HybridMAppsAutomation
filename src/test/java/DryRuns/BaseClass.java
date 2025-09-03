@@ -20,6 +20,7 @@ public class BaseClass {
 		options.setApp(fs.getAbsolutePath());
 		
 		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"),options);
+//		AndroidDriver driver = new AndroidDriver(new URL("http://192.168.144.1:4723/"),options);
 		return driver;
 		
 		

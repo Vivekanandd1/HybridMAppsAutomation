@@ -10,7 +10,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class Gestures extends BaseClass{
       
 	
-	public static void main(String[] args) throws MalformedURLException {
+	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 		AndroidDriver driver = Capabilities();
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Views']")).click();
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Expandable Lists']")).click();
@@ -18,8 +18,10 @@ public class Gestures extends BaseClass{
 		
 		/*Tap action*/
 		WebElement element = driver.findElement(By.xpath("//android.widget.TextView[@text='People Names']"));
-
-		new Actions(driver).clickAndHold(element).pause(Duration.ofSeconds(2)).release().perform();
+		 Actions Act = new Actions(driver);
+		 Act.clickAndHold(element).pause(Duration.ofSeconds(2)).release().perform();
+		 Thread.sleep(1000);
+		 System.out.println(driver.findElement(By.id("android:id/title")).isDisplayed());
 		   
 		
 	}

@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class SwipeGesture extends BaseClass {
 	
 	public static void main(String[] args) throws MalformedURLException {
-		AndroidDriver driver = Capabilities();
+		AndroidDriver driver = Capabilities("Real");
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Views']")).click();
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Date Widgets']")).click();
 		driver.findElement(By.xpath("//android.widget.TextView[@text='2. Inline']")).click();

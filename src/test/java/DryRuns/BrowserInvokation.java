@@ -11,7 +11,6 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class BrowserInvokation extends BrowserClass {
 	
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws MalformedURLException, InterruptedException  {
 		AndroidDriver driver = Capabilities("Emulator");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(130));
@@ -20,9 +19,11 @@ public class BrowserInvokation extends BrowserClass {
 		
 		driver.findElement(By.name("username")).sendKeys("Admin");
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("admin123");
+		driver.hideKeyboard();
 		WebElement Login = driver.findElement(By.xpath("//button[@type='submit']"));
 		wait.until(ExpectedConditions.elementToBeClickable(Login));
 		Login.click();
+		System.out.println(driver.getTitle());
 		System.out.println("Clicked");
 	}
 

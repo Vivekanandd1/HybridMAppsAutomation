@@ -10,6 +10,8 @@ public class BrowserClass {
 	public static AndroidDriver Capabilities(String Device) throws MalformedURLException {
 
 		UiAutomator2Options options = new UiAutomator2Options().setAutomationName("UiAutomator2");
+		options.setCapability("ignoreHiddenApiPolicyError", true);
+		options.setCapability("chromedriver_autodownload", true);
 
 		options.withBrowserName("Chrome").setChromedriverExecutable("");
 

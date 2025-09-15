@@ -16,6 +16,7 @@ public class BaseClass {
 		File fs = new File(f,"ApiDemos-debug.apk");
 		
 		UiAutomator2Options options = new UiAutomator2Options();
+		options.setCapability("ignoreHiddenApiPolicyError", true);
 		options.setDeviceName("TestPhone");
 		options.setApp(fs.getAbsolutePath());
 		

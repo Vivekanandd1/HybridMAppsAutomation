@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -41,7 +43,12 @@ public class FormFillUp extends BaseClass1 {
 			}
 
 		}
+		
+		driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
+		
 
+		driver.findElement(By.className("android.widget.CheckBox")).click();
+		
 	}
 
 }
